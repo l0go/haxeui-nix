@@ -87,7 +87,7 @@
         packages.hxwidgets =
         with import nixpkgs { system = system; };
         let
-          libname = "hxwidgets";
+          libname = "hxWidgets";
           version = "git";
         in
         stdenv.mkDerivation {
