@@ -1,7 +1,7 @@
 # HaxeUI Nix Flake
 This is a template for hxWidgets+HaxeUI projects using the Nix Flake feature. This allows you to consistently create development environments and build on Linux and MacOS.
 ## Setting up Nix
-1. Install the Nix package manager if you have not yet.	Follow the [offical guide](https://nixos.org/download.html). It only takes one command to install!
+1. Install the Nix package manager if you have not yet.	Follow the [official guide](https://nixos.org/download.html). It only takes one command to install!
 2. Add ``experimental-features = nix-command flakes`` to ``~/config/nix/nix.conf`` or ``/etc/nix/nix.conf`` to enable the flake feature.
 3. You may need to restart the Nix daemon. On a systemd system run ``sudo systemctl restart nix-daemon.service``.
 4. Test if nix is installed by running the ``nix`` command. It should state that no subcommand is specified.

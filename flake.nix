@@ -111,7 +111,7 @@
         pname = projectName;
         version = projectVersion;
         src = ./.;
-        nativeBuildInputs = [ pkgs.haxe pkgs.wxGTK32 clang self.packages.${system}.hxcpp self.packages.${system}.haxeui-core self.packages.${system}.haxeui-hxwidgets self.packages.${system}.hxwidgets ] ++ lib.optionals stdenv.isDarwin [ darwin.apple_sdk.frameworks.Cocoa ];
+        nativeBuildInputs = [ pkgs.haxe pkgs.wxGTK32 pkgs.libGL pkgs.pcre clang self.packages.${system}.hxcpp self.packages.${system}.haxeui-core self.packages.${system}.haxeui-hxwidgets self.packages.${system}.hxwidgets ] ++ lib.optionals stdenv.isDarwin [ darwin.apple_sdk.frameworks.Cocoa ];
         patchPhase = concatHaxelibs;
         postPatch = lib.optionalString stdenv.isDarwin ''
           chmod +w $TMP/haxe/hxcpp/4,2,1/toolchain/
@@ -134,7 +134,7 @@
       defaultPackage = self.packages.${system}.app;
 
       devShell = pkgs.mkShell {
-        buildInputs = with pkgs; [ haxe wxGTK32 clang self.packages.${system}.hxcpp self.packages.${system}.haxeui-core self.packages.${system}.haxeui-hxwidgets self.packages.${system}.hxwidgets ];
+        buildInputs = with pkgs; [ haxe wxGTK32 libGL pcre clang self.packages.${system}.hxcpp self.packages.${system}.haxeui-core self.packages.${system}.haxeui-hxwidgets self.packages.${system}.hxwidgets ];
         shellHook = concatHaxelibs;
       };
     });
